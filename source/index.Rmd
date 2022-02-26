@@ -1,0 +1,45 @@
+---
+title: "Incarceation Trends and Black People Report"
+author: "Hao Chen"
+date: "2/25/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("analysis.R")
+```
+## Introduction 
+
+
+According to the data published from Vera about the incarceration trends in the U.S, the proportion of colored people in jail is different across the country. This report emphases black people in jail and their proportion to the total jail population. The reason behind this is the increasing upheaval of black lifes matter movement and interests in the black jail rate. This can also lead to reconsideration about the sterotype of black person and crime. 
+
+## Summary
+
+According to the data from [statistics](https://github.com/vera-institute/incarceration-trends.git/incarceration_trends.csv), `r high_black_jail_pop_county` have the highest black jail population. `r low_black_jail_prop_county` has the lowest black jail population. The average black jail population is `r num_average_black_jail_prop`.`r county_high_prop_black` has the highest proportion of black person in jail. LA county as the county that has the highest black jail population, the black jail popluation has changed `r LA_10_year_change` in the last 10 years. 
+
+## Jail population in LA county by race chart
+
+```{r, echo=FALSE}
+plot(LA_plot)
+```
+
+The purpose of this chart is to demonstrate the proportion of different race in LA county jail in the last 35 years. The reason for picking LA county is becasue it is the county that has the highest black jail proportion across the nation right now. As we can see in the chart, althought black people consist a large portion of the total population, it is not the number one race in LA county for 35 years.  
+
+
+## The relationship between total population and black in jail pop in top 10 populated counties in different states
+
+
+```{r , echo=FALSE}
+plot(Black_Top_10_pop_county_plot)
+```
+
+This chart shows the proportion of black proportion in jail in the top 10 populated counties. As in the chart, we can see there is no relationship between the population of a county and its black ratio in jail. It means county with higher population has no connection to its black proportion in jail. 
+
+## Black people in jail proportion in U.S
+
+```{r , echo=FALSE}
+plot(U.Smap)
+```
+
+This map shows which states in the country have higher rate of black person in jail.We want to see whether there is a relationship between geographic location and black jail ratio. As the map shows, southeast area has higher rate of black person in jail. In some states, the black ratio even reached 0.6, which means half of the jail population is consisted of black people. 
